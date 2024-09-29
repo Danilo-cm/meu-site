@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Segurança e Tecnologia</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            text-align: center;
+            background-color: #444;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .banner {
+            background-image: url('business_web_banner.png');
+            background-size: cover;
+            background-position: center;
+            height: 350px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 38px;
+            text-align: center;
+			
+        }
+		
+		.fonte{
+			color: #fff;
+		}
+
+        section {
+            padding: 20px;
+        }
+
+        h2 {
+            color: #000000;
+            text-align: center;
+        }
+
+        .service {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .service div {
+            width: 30%;
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .service div:hover {
+            background-color: #DDDDDD;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        .contact-form input, .contact-form textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #444;
+        }
+
+    </style>
+    <link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+  <h1>Soluções em Segurança e Tecnologia</h1>
+</header>
+
+<nav>
+    <a href="#home">Início</a>
+    <a href="#services">Serviços</a>
+    <a href="#about">Sobre Nós</a>
+    <a href="#contact">Contato</a>
+</nav>
+
+<div class="banner">
+    <h2 class="fonte">Segurança de Qualidade para Sua Casa e Empresa</h2>
+</div>
+
+<section id="services">
+    <h2>Nossos Serviços</h2>
+    <div class="service">
+        <div>
+            <h3>Instalação de Câmeras</h3>
+          <p>Monitoramento completo com câmeras de alta resolução.</p>
+        <img src="2e1fcb4a-34c3-4252-8160-00742eea7a4d.png" alt="Placeholder image" width="300" class="rounded img-fluid">        </div>
+        <div>
+            <h3>Centrais de Alarme</h3>
+            <p>Soluções avançadas para a proteção do seu patrimôni.</p>
+        <img src="cb0787c2-06f2-4012-bd77-0628af288a1c.png" alt="Placeholder image" width="300" class="rounded img-fluid">        </div>
+        <div>
+          <h3>Cercas Elétricas</h3>
+          <p>Segurança reforçada para impedir invasões indesejadas.</p>
+      <img src="b03fc612-f675-4180-bac6-9293bf44d412.png" alt="Placeholder image" width="300" class="rounded img-fluid">        </div>
+    </div>
+</section>
+
+<section id="about">
+    <h2>Sobre Nós</h2>
+  <p>Com anos de experiência no mercado de segurança e tecnologia, oferecemos soluções personalizadas para garantir
+      a proteção da sua casa ou empresa. Nosso compromisso é com a qualidade, eficiência e confiança dos nossos 
+      serviços.</p>
+</section>
+
+<section id="contact">
+  <h2>Contato</h2>
+    <form class="contact-form" id="contact-form">
+        <input type="text" id="name" placeholder="Seu nome" required>
+        <input type="email" id="email" placeholder="Seu e-mail" required>
+        <textarea id="message" placeholder="Sua mensagem" required></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+    <p id="form-status"></p>
+</section>
+
+
+<footer>
+    <p>&copy; 2024 Segurança e Tecnologia. Todos os direitos reservados.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+    (function() {
+        emailjs.init("S61ZDM3n6KhkcR-Ow"); // Substitua YOUR_USER_ID pelo seu User ID do EmailJS
+    })();
+
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Impede o recarregamento da página ao enviar o formulário
+
+        // Coleta os valores dos campos do formulário
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var message = document.getElementById('message').value;
+
+        // Configura os parâmetros para enviar via EmailJS
+        var templateParams = {
+            from_name: name,
+            from_email: email,
+            message: message
+        };
+
+        // Envia o e-mail via EmailJS
+        emailjs.send('service_2oblslr', 'template_hcvx96n', templateParams)
+            .then(function(response) {
+                document.getElementById('form-status').innerText = "Mensagem enviada com sucesso!";
+            }, function(error) {
+                console.log('Erro ao enviar: ', error);  // Verifica o erro no console
+                document.getElementById('form-status').innerText = "Erro ao enviar mensagem. Tente novamente.";
+            });
+    });
+</script>
+
+
+</body>
+</html>
