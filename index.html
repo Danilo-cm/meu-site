@@ -63,6 +63,7 @@
             display: flex;
             justify-content: space-around;
             margin-bottom: 20px;
+		flex-wrap: wrap; /*dicionado para ajustar o conteudo em tela menores menores */		
         }
 
         .service div {
@@ -71,12 +72,15 @@
             padding: 10px;
             border-radius: 8px;
             text-align: center;
+            margin-bottom: 20px; /* Ajustado para melhor espaçamento */
+            transition: background-color 0.3s ease;
         }
 
         .service div:hover {
             background-color: #DDDDDD;
         }
 
+       /*Rodapé */
         footer {
             background-color: #333;
             color: white;
@@ -87,6 +91,7 @@
             width: 100%;
         }
 
+        /* Formulário de Contato */
         .contact-form {
             display: flex;
             flex-direction: column;
@@ -94,7 +99,8 @@
             margin: 0 auto;
         }
 
-        .contact-form input, .contact-form textarea {
+        .contact-form input, 
+	.contact-form textarea {
             margin-bottom: 10px;
             padding: 10px;
             font-size: 16px;
@@ -114,9 +120,15 @@
         .contact-form button:hover {
             background-color: #444;
         }
+	/* Imagens Responsivas */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+	
 
     </style>
-    <link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
+   	<link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <header>
